@@ -96,6 +96,7 @@ export default class PIOHome {
     await pioNodeHelpers.home.ensureServerStarted({
       port: extension.getSetting('pioHomeServerHttpPort'),
       host: extension.getSetting('pioHomeServerHttpHost'),
+      secure: extension.getSetting('pioHomeServerUseSSL'),
       onIDECommand: async (command, params) => {
         if (command === 'open_project') {
           if (extension.projectObservable) {
